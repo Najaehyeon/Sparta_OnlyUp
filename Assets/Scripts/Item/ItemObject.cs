@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class ItemObject : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public ItemData itemData;
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter(Collision collision)
     {
-        
+        if (collision.gameObject.CompareTag("Player") && itemData.itemType == ItemType.Jump)
+        {
+            CharacterManager.Instance.Player.jumpPower *= itemData.stat;
+            Destroy(gameObject);
+        }
     }
 }

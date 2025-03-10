@@ -36,6 +36,7 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
+        CharacterManager.Instance.Player = this;
         _rigidbody = GetComponent<Rigidbody>();
         _animator = GetComponentInChildren<Animator>();
     }

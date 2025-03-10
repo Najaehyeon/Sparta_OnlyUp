@@ -16,7 +16,7 @@ public class SuperJumpPoint : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            playerRigidBody.velocity = Vector3.up * player.jumpPower * 2f;
+            playerRigidBody.AddForce(Vector3.up * player.jumpPower * 2f, ForceMode.Impulse);
         }
     }
 }
