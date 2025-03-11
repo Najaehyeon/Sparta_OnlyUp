@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bdaa74937bd2924a8ab5b0957fbc019, type: 3}
   m_Name: Item_Apple
   m_EditorClassIdentifier: 
-  itemName: "\uC810\uD504 \uAC15\uD654 \uC0AC\uACFC"
+  itemName: "\uC0AC\uACFC"
   description: "\uC810\uD504\uB825\uC774 \uB192\uC544\uC9C0\uB294 \uC0AC\uACFC\uB2E4."
   dropItem: {fileID: 6745494588781013697, guid: dcf9dc8dd4b7c964d9fd0af92d2d1058, type: 3}
+  stat: 1.5
+  itemType: 1

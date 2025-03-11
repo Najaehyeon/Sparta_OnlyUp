@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bdaa74937bd2924a8ab5b0957fbc019, type: 3}
   m_Name: Item_Carrot
   m_EditorClassIdentifier: 
-  itemName: 
-  description: 
-  dropItem: {fileID: 0}
+  itemName: "\uB2F9\uADFC"
+  description: "\uCCB4\uB825\uC744 \uD68C\uBCF5\uD55C\uB2E4."
+  dropItem: {fileID: 3252529652027736594, guid: 85def164acb9f2043a6625a21a09c79e, type: 3}
+  stat: 10
+  itemType: 0
