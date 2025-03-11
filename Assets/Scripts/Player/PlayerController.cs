@@ -1,11 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class Player : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     public Transform cameraContainer;
     public Transform playerBody;
@@ -19,7 +16,6 @@ public class Player : MonoBehaviour
     public float jumpPower;
     private Vector2 currentMoveInput;
     private Vector3 moveDir;
-    private bool isJump;
 
     [Header("Look")]
     public float lookSensitivity;
@@ -36,7 +32,6 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        CharacterManager.Instance.Player = this;
         _rigidbody = GetComponent<Rigidbody>();
         _animator = GetComponentInChildren<Animator>();
     }
@@ -50,8 +45,6 @@ public class Player : MonoBehaviour
     private void Update()
     {
         HealthUpdate();
-
-        
     }
 
     private void FixedUpdate()

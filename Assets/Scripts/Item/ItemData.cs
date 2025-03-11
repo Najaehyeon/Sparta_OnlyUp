@@ -14,7 +14,6 @@ public class ItemData : ScriptableObject
     [Header("Info")]
     public string itemName;
     public string description;
-    public GameObject dropItem;
     public float stat;
     public ItemType itemType;
 }

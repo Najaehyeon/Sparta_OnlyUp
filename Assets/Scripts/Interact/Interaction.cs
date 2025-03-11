@@ -9,14 +9,17 @@ public class Interaction : MonoBehaviour
     public float maxCheckDistance;
     public LayerMask layerMask;
     public GameObject currentInteractableObj;
-    public GameObject interactBox;
     public GameObject interactMessage;
     InteractableObject interactableObject;
 
 
     void Update()
     {
-        // ray
+        CheckInteractableObject();
+    }
+
+    void CheckInteractableObject()
+    {
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
         RaycastHit hit;
 
@@ -26,17 +29,19 @@ public class Interaction : MonoBehaviour
             {
                 currentInteractableObj = hit.collider.gameObject;
                 interactableObject = hit.collider.GetComponent<InteractableObject>();
+                interactMessage.SetActive(true);
             }
         }
         else
         {
             currentInteractableObj = null;
+            interactMessage.SetActive(false);
         }
     }
 
     public void OnInteractInput(InputAction.CallbackContext context)
     {
-        if (context.phase == InputActionPhase.Started)
+        if (context.phase == InputActionPhase.Started && currentInteractableObj != null)
         {
             interactableObject.Interact();
         }
